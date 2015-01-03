@@ -1,0 +1,91 @@
+call javaapi#namespace('com.sun.jmx.remote.util')
+
+call javaapi#class('CacheMap', 'WeakHashMap', [
+  \ javaapi#method(0,1,'CacheMap(', 'int)', ''),
+  \ javaapi#method(0,1,'put(', 'K, V)', 'V'),
+  \ javaapi#method(0,1,'get(', 'Object)', 'V'),
+  \ ])
+
+call javaapi#class('ClassLoaderWithRepository', 'ClassLoader', [
+  \ javaapi#method(0,1,'ClassLoaderWithRepository(', 'ClassLoaderRepository, ClassLoader)', ''),
+  \ javaapi#method(0,0,'findClass(', 'String) throws ClassNotFoundException', 'Class'),
+  \ ])
+
+call javaapi#class('ClassLogger', '', [
+  \ javaapi#method(0,1,'ClassLogger(', 'String, String)', ''),
+  \ javaapi#method(0,1,'traceOn(', ')', 'boolean'),
+  \ javaapi#method(0,1,'debugOn(', ')', 'boolean'),
+  \ javaapi#method(0,1,'warningOn(', ')', 'boolean'),
+  \ javaapi#method(0,1,'infoOn(', ')', 'boolean'),
+  \ javaapi#method(0,1,'configOn(', ')', 'boolean'),
+  \ javaapi#method(0,1,'fineOn(', ')', 'boolean'),
+  \ javaapi#method(0,1,'finerOn(', ')', 'boolean'),
+  \ javaapi#method(0,1,'finestOn(', ')', 'boolean'),
+  \ javaapi#method(0,1,'debug(', 'String, String)', 'void'),
+  \ javaapi#method(0,1,'debug(', 'String, Throwable)', 'void'),
+  \ javaapi#method(0,1,'debug(', 'String, String, Throwable)', 'void'),
+  \ javaapi#method(0,1,'trace(', 'String, String)', 'void'),
+  \ javaapi#method(0,1,'trace(', 'String, Throwable)', 'void'),
+  \ javaapi#method(0,1,'trace(', 'String, String, Throwable)', 'void'),
+  \ javaapi#method(0,1,'error(', 'String, String)', 'void'),
+  \ javaapi#method(0,1,'error(', 'String, Throwable)', 'void'),
+  \ javaapi#method(0,1,'error(', 'String, String, Throwable)', 'void'),
+  \ javaapi#method(0,1,'finest(', 'String, String)', 'void'),
+  \ javaapi#method(0,1,'finest(', 'String, Throwable)', 'void'),
+  \ javaapi#method(0,1,'finest(', 'String, String, Throwable)', 'void'),
+  \ javaapi#method(0,1,'finer(', 'String, String)', 'void'),
+  \ javaapi#method(0,1,'finer(', 'String, Throwable)', 'void'),
+  \ javaapi#method(0,1,'finer(', 'String, String, Throwable)', 'void'),
+  \ javaapi#method(0,1,'fine(', 'String, String)', 'void'),
+  \ javaapi#method(0,1,'fine(', 'String, Throwable)', 'void'),
+  \ javaapi#method(0,1,'fine(', 'String, String, Throwable)', 'void'),
+  \ javaapi#method(0,1,'config(', 'String, String)', 'void'),
+  \ javaapi#method(0,1,'config(', 'String, Throwable)', 'void'),
+  \ javaapi#method(0,1,'config(', 'String, String, Throwable)', 'void'),
+  \ javaapi#method(0,1,'info(', 'String, String)', 'void'),
+  \ javaapi#method(0,1,'info(', 'String, Throwable)', 'void'),
+  \ javaapi#method(0,1,'info(', 'String, String, Throwable)', 'void'),
+  \ javaapi#method(0,1,'warning(', 'String, String)', 'void'),
+  \ javaapi#method(0,1,'warning(', 'String, Throwable)', 'void'),
+  \ javaapi#method(0,1,'warning(', 'String, String, Throwable)', 'void'),
+  \ javaapi#method(0,1,'severe(', 'String, String)', 'void'),
+  \ javaapi#method(0,1,'severe(', 'String, Throwable)', 'void'),
+  \ javaapi#method(0,1,'severe(', 'String, String, Throwable)', 'void'),
+  \ ])
+
+call javaapi#class('EnvHelp', '', [
+  \ javaapi#field(1,1,'BUFFER_SIZE_PROPERTY', 'String'),
+  \ javaapi#field(1,1,'MAX_FETCH_NOTIFS', 'String'),
+  \ javaapi#field(1,1,'FETCH_TIMEOUT', 'String'),
+  \ javaapi#field(1,1,'NOTIF_ACCESS_CONTROLLER', 'String'),
+  \ javaapi#field(1,1,'DEFAULT_ORB', 'String'),
+  \ javaapi#field(1,1,'HIDDEN_ATTRIBUTES', 'String'),
+  \ javaapi#field(1,1,'DEFAULT_HIDDEN_ATTRIBUTES', 'String'),
+  \ javaapi#field(1,1,'SERVER_CONNECTION_TIMEOUT', 'String'),
+  \ javaapi#field(1,1,'CLIENT_CONNECTION_CHECK_PERIOD', 'String'),
+  \ javaapi#field(1,1,'JMX_SERVER_DAEMON', 'String'),
+  \ javaapi#method(0,1,'EnvHelp(', ')', ''),
+  \ javaapi#method(1,1,'resolveServerClassLoader(', 'Map<String, ?>, MBeanServer) throws InstanceNotFoundException', 'ClassLoader'),
+  \ javaapi#method(1,1,'resolveClientClassLoader(', 'Map<String, ?>)', 'ClassLoader'),
+  \ javaapi#method(1,1,'initCause(', 'T, Throwable)', 'T'),
+  \ javaapi#method(1,1,'getCause(', 'Throwable)', 'Throwable'),
+  \ javaapi#method(1,1,'getNotifBufferSize(', 'Map<String, ?>)', 'int'),
+  \ javaapi#method(1,1,'getMaxFetchNotifNumber(', 'Map<String, ?>)', 'int'),
+  \ javaapi#method(1,1,'getFetchTimeout(', 'Map<String, ?>)', 'long'),
+  \ javaapi#method(1,1,'getNotificationAccessController(', 'Map<String, ?>)', 'NotificationAccessController'),
+  \ javaapi#method(1,1,'getIntegerAttribute(', 'Map<String, ?>, String, long, long, long)', 'long'),
+  \ javaapi#method(1,1,'checkAttributes(', 'Map<?, ?>)', 'void'),
+  \ javaapi#method(1,1,'filterAttributes(', 'Map<String, V>)', 'V>'),
+  \ javaapi#method(1,1,'getServerConnectionTimeout(', 'Map<String, ?>)', 'long'),
+  \ javaapi#method(1,1,'getConnectionCheckPeriod(', 'Map<String, ?>)', 'long'),
+  \ javaapi#method(1,1,'computeBooleanFromString(', 'Map<String, ?>, String, boolean)', 'boolean'),
+  \ javaapi#method(1,1,'computeBooleanFromString(', 'Map<String, ?>, String, boolean, boolean)', 'boolean'),
+  \ javaapi#method(1,1,'mapToHashtable(', 'Map<K, V>)', 'V>'),
+  \ javaapi#method(1,1,'isServerDaemon(', 'Map<String, ?>)', 'boolean'),
+  \ ])
+
+call javaapi#class('OrderClassLoaders', 'ClassLoader', [
+  \ javaapi#method(0,1,'OrderClassLoaders(', 'ClassLoader, ClassLoader)', ''),
+  \ javaapi#method(0,0,'findClass(', 'String) throws ClassNotFoundException', 'Class'),
+  \ ])
+

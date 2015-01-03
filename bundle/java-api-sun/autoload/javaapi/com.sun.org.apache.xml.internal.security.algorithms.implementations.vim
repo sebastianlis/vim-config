@@ -1,0 +1,78 @@
+call javaapi#namespace('com.sun.org.apache.xml.internal.security.algorithms.implementations')
+
+call javaapi#class('IntegrityHmac', 'SignatureAlgorithmSpi', [
+  \ javaapi#method(0,1,'engineGetURI(', ')', 'String'),
+  \ javaapi#method(0,1,'IntegrityHmac(', ') throws XMLSignatureException', ''),
+  \ javaapi#method(0,0,'engineSetParameter(', 'AlgorithmParameterSpec) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,1,'reset(', ')', 'void'),
+  \ javaapi#method(0,0,'engineVerify(', 'byte[]) throws XMLSignatureException', 'boolean'),
+  \ javaapi#method(0,0,'engineInitVerify(', 'Key) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineSign(', ') throws XMLSignatureException', 'byte'),
+  \ javaapi#method(0,0,'engineInitSign(', 'Key) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineInitSign(', 'Key, AlgorithmParameterSpec) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineInitSign(', 'Key, SecureRandom) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineUpdate(', 'byte[]) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineUpdate(', 'byte) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineUpdate(', 'byte[], int, int) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineGetJCEAlgorithmString(', ')', 'String'),
+  \ javaapi#method(0,0,'engineGetJCEProviderName(', ')', 'String'),
+  \ javaapi#method(0,0,'engineSetHMACOutputLength(', 'int)', 'void'),
+  \ javaapi#method(0,0,'engineGetContextFromElement(', 'Element)', 'void'),
+  \ javaapi#method(0,1,'engineAddContextToElement(', 'Element)', 'void'),
+  \ ])
+
+call javaapi#class('SignatureBaseRSA', 'SignatureAlgorithmSpi', [
+  \ javaapi#method(0,1,'engineGetURI(', ')', 'String'),
+  \ javaapi#method(0,1,'SignatureBaseRSA(', ') throws XMLSignatureException', ''),
+  \ javaapi#method(0,0,'engineSetParameter(', 'AlgorithmParameterSpec) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineVerify(', 'byte[]) throws XMLSignatureException', 'boolean'),
+  \ javaapi#method(0,0,'engineInitVerify(', 'Key) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineSign(', ') throws XMLSignatureException', 'byte'),
+  \ javaapi#method(0,0,'engineInitSign(', 'Key, SecureRandom) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineInitSign(', 'Key) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineUpdate(', 'byte[]) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineUpdate(', 'byte) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineUpdate(', 'byte[], int, int) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineGetJCEAlgorithmString(', ')', 'String'),
+  \ javaapi#method(0,0,'engineGetJCEProviderName(', ')', 'String'),
+  \ javaapi#method(0,0,'engineSetHMACOutputLength(', 'int) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineInitSign(', 'Key, AlgorithmParameterSpec) throws XMLSignatureException', 'void'),
+  \ ])
+
+call javaapi#class('SignatureDSA', 'SignatureAlgorithmSpi', [
+  \ javaapi#field(1,1,'_URI', 'String'),
+  \ javaapi#method(0,0,'engineGetURI(', ')', 'String'),
+  \ javaapi#method(0,1,'SignatureDSA(', ') throws XMLSignatureException', ''),
+  \ javaapi#method(0,0,'engineSetParameter(', 'AlgorithmParameterSpec) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineVerify(', 'byte[]) throws XMLSignatureException', 'boolean'),
+  \ javaapi#method(0,0,'engineInitVerify(', 'Key) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineSign(', ') throws XMLSignatureException', 'byte'),
+  \ javaapi#method(0,0,'engineInitSign(', 'Key, SecureRandom) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineInitSign(', 'Key) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineUpdate(', 'byte[]) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineUpdate(', 'byte) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineUpdate(', 'byte[], int, int) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineGetJCEAlgorithmString(', ')', 'String'),
+  \ javaapi#method(0,0,'engineGetJCEProviderName(', ')', 'String'),
+  \ javaapi#method(0,0,'engineSetHMACOutputLength(', 'int) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineInitSign(', 'Key, AlgorithmParameterSpec) throws XMLSignatureException', 'void'),
+  \ ])
+
+call javaapi#class('SignatureECDSA', 'SignatureAlgorithmSpi', [
+  \ javaapi#method(0,1,'engineGetURI(', ')', 'String'),
+  \ javaapi#method(0,1,'SignatureECDSA(', ') throws XMLSignatureException', ''),
+  \ javaapi#method(0,0,'engineSetParameter(', 'AlgorithmParameterSpec) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineVerify(', 'byte[]) throws XMLSignatureException', 'boolean'),
+  \ javaapi#method(0,0,'engineInitVerify(', 'Key) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineSign(', ') throws XMLSignatureException', 'byte'),
+  \ javaapi#method(0,0,'engineInitSign(', 'Key, SecureRandom) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineInitSign(', 'Key) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineUpdate(', 'byte[]) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineUpdate(', 'byte) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineUpdate(', 'byte[], int, int) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineGetJCEAlgorithmString(', ')', 'String'),
+  \ javaapi#method(0,0,'engineGetJCEProviderName(', ')', 'String'),
+  \ javaapi#method(0,0,'engineSetHMACOutputLength(', 'int) throws XMLSignatureException', 'void'),
+  \ javaapi#method(0,0,'engineInitSign(', 'Key, AlgorithmParameterSpec) throws XMLSignatureException', 'void'),
+  \ ])
+

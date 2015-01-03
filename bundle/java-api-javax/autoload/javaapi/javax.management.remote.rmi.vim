@@ -1,0 +1,150 @@
+call javaapi#namespace('javax.management.remote.rmi')
+
+call javaapi#class('NoCallStackClassLoader', 'ClassLoader', [
+  \ javaapi#method(0,1,'NoCallStackClassLoader(', 'String, byte[], String[], ClassLoader, ProtectionDomain)', ''),
+  \ javaapi#method(0,1,'NoCallStackClassLoader(', 'String[], byte[][], String[], ClassLoader, ProtectionDomain)', ''),
+  \ javaapi#method(0,0,'findClass(', 'String) throws ClassNotFoundException', 'Class'),
+  \ javaapi#method(1,1,'stringToBytes(', 'String)', 'byte'),
+  \ ])
+
+call javaapi#interface('RMIConnection', 'Remote', [
+  \ javaapi#method(0,1,'getConnectionId(', ') throws IOException', 'String'),
+  \ javaapi#method(0,1,'close(', ') throws IOException', 'void'),
+  \ javaapi#method(0,1,'createMBean(', 'String, ObjectName, Subject) throws ReflectionException, InstanceAlreadyExistsException, MBeanRegistrationException, MBeanException, NotCompliantMBeanException, IOException', 'ObjectInstance'),
+  \ javaapi#method(0,1,'createMBean(', 'String, ObjectName, ObjectName, Subject) throws ReflectionException, InstanceAlreadyExistsException, MBeanRegistrationException, MBeanException, NotCompliantMBeanException, InstanceNotFoundException, IOException', 'ObjectInstance'),
+  \ javaapi#method(0,1,'createMBean(', 'String, ObjectName, MarshalledObject, String[], Subject) throws ReflectionException, InstanceAlreadyExistsException, MBeanRegistrationException, MBeanException, NotCompliantMBeanException, IOException', 'ObjectInstance'),
+  \ javaapi#method(0,1,'createMBean(', 'String, ObjectName, ObjectName, MarshalledObject, String[], Subject) throws ReflectionException, InstanceAlreadyExistsException, MBeanRegistrationException, MBeanException, NotCompliantMBeanException, InstanceNotFoundException, IOException', 'ObjectInstance'),
+  \ javaapi#method(0,1,'unregisterMBean(', 'ObjectName, Subject) throws InstanceNotFoundException, MBeanRegistrationException, IOException', 'void'),
+  \ javaapi#method(0,1,'getObjectInstance(', 'ObjectName, Subject) throws InstanceNotFoundException, IOException', 'ObjectInstance'),
+  \ javaapi#method(0,1,'queryMBeans(', 'ObjectName, MarshalledObject, Subject) throws IOException', 'Set'),
+  \ javaapi#method(0,1,'queryNames(', 'ObjectName, MarshalledObject, Subject) throws IOException', 'Set'),
+  \ javaapi#method(0,1,'isRegistered(', 'ObjectName, Subject) throws IOException', 'boolean'),
+  \ javaapi#method(0,1,'getMBeanCount(', 'Subject) throws IOException', 'Integer'),
+  \ javaapi#method(0,1,'getAttribute(', 'ObjectName, String, Subject) throws MBeanException, AttributeNotFoundException, InstanceNotFoundException, ReflectionException, IOException', 'Object'),
+  \ javaapi#method(0,1,'getAttributes(', 'ObjectName, String[], Subject) throws InstanceNotFoundException, ReflectionException, IOException', 'AttributeList'),
+  \ javaapi#method(0,1,'setAttribute(', 'ObjectName, MarshalledObject, Subject) throws InstanceNotFoundException, AttributeNotFoundException, InvalidAttributeValueException, MBeanException, ReflectionException, IOException', 'void'),
+  \ javaapi#method(0,1,'setAttributes(', 'ObjectName, MarshalledObject, Subject) throws InstanceNotFoundException, ReflectionException, IOException', 'AttributeList'),
+  \ javaapi#method(0,1,'invoke(', 'ObjectName, String, MarshalledObject, String[], Subject) throws InstanceNotFoundException, MBeanException, ReflectionException, IOException', 'Object'),
+  \ javaapi#method(0,1,'getDefaultDomain(', 'Subject) throws IOException', 'String'),
+  \ javaapi#method(0,1,'getDomains(', 'Subject) throws IOException', 'String'),
+  \ javaapi#method(0,1,'getMBeanInfo(', 'ObjectName, Subject) throws InstanceNotFoundException, IntrospectionException, ReflectionException, IOException', 'MBeanInfo'),
+  \ javaapi#method(0,1,'isInstanceOf(', 'ObjectName, String, Subject) throws InstanceNotFoundException, IOException', 'boolean'),
+  \ javaapi#method(0,1,'addNotificationListener(', 'ObjectName, ObjectName, MarshalledObject, MarshalledObject, Subject) throws InstanceNotFoundException, IOException', 'void'),
+  \ javaapi#method(0,1,'removeNotificationListener(', 'ObjectName, ObjectName, Subject) throws InstanceNotFoundException, ListenerNotFoundException, IOException', 'void'),
+  \ javaapi#method(0,1,'removeNotificationListener(', 'ObjectName, ObjectName, MarshalledObject, MarshalledObject, Subject) throws InstanceNotFoundException, ListenerNotFoundException, IOException', 'void'),
+  \ javaapi#method(0,1,'addNotificationListeners(', 'ObjectName[], MarshalledObject[], Subject[]) throws InstanceNotFoundException, IOException', 'Integer'),
+  \ javaapi#method(0,1,'removeNotificationListeners(', 'ObjectName, Integer[], Subject) throws InstanceNotFoundException, ListenerNotFoundException, IOException', 'void'),
+  \ javaapi#method(0,1,'fetchNotifications(', 'long, int, long) throws IOException', 'NotificationResult'),
+  \ ])
+
+call javaapi#class('RMIConnectionImpl', 'Unreferenced', [
+  \ javaapi#method(0,1,'RMIConnectionImpl(', 'RMIServerImpl, String, ClassLoader, Subject, Map<String, ?>)', ''),
+  \ javaapi#method(0,1,'getConnectionId(', ') throws IOException', 'String'),
+  \ javaapi#method(0,1,'close(', ') throws IOException', 'void'),
+  \ javaapi#method(0,1,'unreferenced(', ')', 'void'),
+  \ javaapi#method(0,1,'createMBean(', 'String, ObjectName, Subject) throws ReflectionException, InstanceAlreadyExistsException, MBeanRegistrationException, MBeanException, NotCompliantMBeanException, IOException', 'ObjectInstance'),
+  \ javaapi#method(0,1,'createMBean(', 'String, ObjectName, ObjectName, Subject) throws ReflectionException, InstanceAlreadyExistsException, MBeanRegistrationException, MBeanException, NotCompliantMBeanException, InstanceNotFoundException, IOException', 'ObjectInstance'),
+  \ javaapi#method(0,1,'createMBean(', 'String, ObjectName, MarshalledObject, String[], Subject) throws ReflectionException, InstanceAlreadyExistsException, MBeanRegistrationException, MBeanException, NotCompliantMBeanException, IOException', 'ObjectInstance'),
+  \ javaapi#method(0,1,'createMBean(', 'String, ObjectName, ObjectName, MarshalledObject, String[], Subject) throws ReflectionException, InstanceAlreadyExistsException, MBeanRegistrationException, MBeanException, NotCompliantMBeanException, InstanceNotFoundException, IOException', 'ObjectInstance'),
+  \ javaapi#method(0,1,'unregisterMBean(', 'ObjectName, Subject) throws InstanceNotFoundException, MBeanRegistrationException, IOException', 'void'),
+  \ javaapi#method(0,1,'getObjectInstance(', 'ObjectName, Subject) throws InstanceNotFoundException, IOException', 'ObjectInstance'),
+  \ javaapi#method(0,1,'queryMBeans(', 'ObjectName, MarshalledObject, Subject) throws IOException', 'Set'),
+  \ javaapi#method(0,1,'queryNames(', 'ObjectName, MarshalledObject, Subject) throws IOException', 'Set'),
+  \ javaapi#method(0,1,'isRegistered(', 'ObjectName, Subject) throws IOException', 'boolean'),
+  \ javaapi#method(0,1,'getMBeanCount(', 'Subject) throws IOException', 'Integer'),
+  \ javaapi#method(0,1,'getAttribute(', 'ObjectName, String, Subject) throws MBeanException, AttributeNotFoundException, InstanceNotFoundException, ReflectionException, IOException', 'Object'),
+  \ javaapi#method(0,1,'getAttributes(', 'ObjectName, String[], Subject) throws InstanceNotFoundException, ReflectionException, IOException', 'AttributeList'),
+  \ javaapi#method(0,1,'setAttribute(', 'ObjectName, MarshalledObject, Subject) throws InstanceNotFoundException, AttributeNotFoundException, InvalidAttributeValueException, MBeanException, ReflectionException, IOException', 'void'),
+  \ javaapi#method(0,1,'setAttributes(', 'ObjectName, MarshalledObject, Subject) throws InstanceNotFoundException, ReflectionException, IOException', 'AttributeList'),
+  \ javaapi#method(0,1,'invoke(', 'ObjectName, String, MarshalledObject, String[], Subject) throws InstanceNotFoundException, MBeanException, ReflectionException, IOException', 'Object'),
+  \ javaapi#method(0,1,'getDefaultDomain(', 'Subject) throws IOException', 'String'),
+  \ javaapi#method(0,1,'getDomains(', 'Subject) throws IOException', 'String'),
+  \ javaapi#method(0,1,'getMBeanInfo(', 'ObjectName, Subject) throws InstanceNotFoundException, IntrospectionException, ReflectionException, IOException', 'MBeanInfo'),
+  \ javaapi#method(0,1,'isInstanceOf(', 'ObjectName, String, Subject) throws InstanceNotFoundException, IOException', 'boolean'),
+  \ javaapi#method(0,1,'addNotificationListeners(', 'ObjectName[], MarshalledObject[], Subject[]) throws InstanceNotFoundException, IOException', 'Integer'),
+  \ javaapi#method(0,1,'addNotificationListener(', 'ObjectName, ObjectName, MarshalledObject, MarshalledObject, Subject) throws InstanceNotFoundException, IOException', 'void'),
+  \ javaapi#method(0,1,'removeNotificationListeners(', 'ObjectName, Integer[], Subject) throws InstanceNotFoundException, ListenerNotFoundException, IOException', 'void'),
+  \ javaapi#method(0,1,'removeNotificationListener(', 'ObjectName, ObjectName, Subject) throws InstanceNotFoundException, ListenerNotFoundException, IOException', 'void'),
+  \ javaapi#method(0,1,'removeNotificationListener(', 'ObjectName, ObjectName, MarshalledObject, MarshalledObject, Subject) throws InstanceNotFoundException, ListenerNotFoundException, IOException', 'void'),
+  \ javaapi#method(0,1,'fetchNotifications(', 'long, int, long) throws IOException', 'NotificationResult'),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
+  \ ])
+
+call javaapi#class('RMIConnector', 'JMXAddressable', [
+  \ javaapi#method(0,1,'RMIConnector(', 'JMXServiceURL, Map<String, ?>)', ''),
+  \ javaapi#method(0,1,'RMIConnector(', 'RMIServer, Map<String, ?>)', ''),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
+  \ javaapi#method(0,1,'getAddress(', ')', 'JMXServiceURL'),
+  \ javaapi#method(0,1,'connect(', ') throws IOException', 'void'),
+  \ javaapi#method(0,1,'connect(', 'Map<String, ?>) throws IOException', 'void'),
+  \ javaapi#method(0,1,'getConnectionId(', ') throws IOException', 'String'),
+  \ javaapi#method(0,1,'getMBeanServerConnection(', ') throws IOException', 'MBeanServerConnection'),
+  \ javaapi#method(0,1,'getMBeanServerConnection(', 'Subject) throws IOException', 'MBeanServerConnection'),
+  \ javaapi#method(0,1,'addConnectionNotificationListener(', 'NotificationListener, NotificationFilter, Object)', 'void'),
+  \ javaapi#method(0,1,'removeConnectionNotificationListener(', 'NotificationListener) throws ListenerNotFoundException', 'void'),
+  \ javaapi#method(0,1,'removeConnectionNotificationListener(', 'NotificationListener, NotificationFilter, Object) throws ListenerNotFoundException', 'void'),
+  \ javaapi#method(0,1,'close(', ') throws IOException', 'void'),
+  \ ])
+
+call javaapi#class('RMIConnectorServer', 'JMXConnectorServer', [
+  \ javaapi#field(1,1,'JNDI_REBIND_ATTRIBUTE', 'String'),
+  \ javaapi#field(1,1,'RMI_CLIENT_SOCKET_FACTORY_ATTRIBUTE', 'String'),
+  \ javaapi#field(1,1,'RMI_SERVER_SOCKET_FACTORY_ATTRIBUTE', 'String'),
+  \ javaapi#method(0,1,'RMIConnectorServer(', 'JMXServiceURL, Map<String, ?>) throws IOException', ''),
+  \ javaapi#method(0,1,'RMIConnectorServer(', 'JMXServiceURL, Map<String, ?>, MBeanServer) throws IOException', ''),
+  \ javaapi#method(0,1,'RMIConnectorServer(', 'JMXServiceURL, Map<String, ?>, RMIServerImpl, MBeanServer) throws IOException', ''),
+  \ javaapi#method(0,1,'toJMXConnector(', 'Map<String, ?>) throws IOException', 'JMXConnector'),
+  \ javaapi#method(0,1,'start(', ') throws IOException', 'void'),
+  \ javaapi#method(0,1,'stop(', ') throws IOException', 'void'),
+  \ javaapi#method(0,1,'isActive(', ')', 'boolean'),
+  \ javaapi#method(0,1,'getAddress(', ')', 'JMXServiceURL'),
+  \ javaapi#method(0,1,'getAttributes(', ')', '?>'),
+  \ javaapi#method(0,1,'setMBeanServerForwarder(', 'MBeanServerForwarder)', 'void'),
+  \ javaapi#method(0,0,'connectionOpened(', 'String, String, Object)', 'void'),
+  \ javaapi#method(0,0,'connectionClosed(', 'String, String, Object)', 'void'),
+  \ javaapi#method(0,0,'connectionFailed(', 'String, String, Object)', 'void'),
+  \ ])
+
+call javaapi#class('RMIIIOPServerImpl', 'RMIServerImpl', [
+  \ javaapi#method(0,1,'RMIIIOPServerImpl(', 'Map<String, ?>) throws IOException', ''),
+  \ javaapi#method(0,0,'export(', ') throws IOException', 'void'),
+  \ javaapi#method(0,0,'getProtocol(', ')', 'String'),
+  \ javaapi#method(0,1,'toStub(', ') throws IOException', 'Remote'),
+  \ javaapi#method(0,0,'makeClient(', 'String, Subject) throws IOException', 'RMIConnection'),
+  \ javaapi#method(0,0,'closeClient(', 'RMIConnection) throws IOException', 'void'),
+  \ javaapi#method(0,0,'closeServer(', ') throws IOException', 'void'),
+  \ ])
+
+call javaapi#class('RMIJRMPServerImpl', 'RMIServerImpl', [
+  \ javaapi#method(0,1,'RMIJRMPServerImpl(', 'int, RMIClientSocketFactory, RMIServerSocketFactory, Map<String, ?>) throws IOException', ''),
+  \ javaapi#method(0,0,'export(', ') throws IOException', 'void'),
+  \ javaapi#method(0,0,'getProtocol(', ')', 'String'),
+  \ javaapi#method(0,1,'toStub(', ') throws IOException', 'Remote'),
+  \ javaapi#method(0,0,'makeClient(', 'String, Subject) throws IOException', 'RMIConnection'),
+  \ javaapi#method(0,0,'closeClient(', 'RMIConnection) throws IOException', 'void'),
+  \ javaapi#method(0,0,'closeServer(', ') throws IOException', 'void'),
+  \ ])
+
+call javaapi#interface('RMIServer', 'Remote', [
+  \ javaapi#method(0,1,'getVersion(', ') throws RemoteException', 'String'),
+  \ javaapi#method(0,1,'newClient(', 'Object) throws IOException', 'RMIConnection'),
+  \ ])
+
+call javaapi#class('RMIServerImpl', 'RMIServer', [
+  \ javaapi#method(0,1,'RMIServerImpl(', 'Map<String, ?>)', ''),
+  \ javaapi#method(0,0,'export(', ') throws IOException', 'void'),
+  \ javaapi#method(0,1,'toStub(', ') throws IOException', 'Remote'),
+  \ javaapi#method(0,1,'setDefaultClassLoader(', 'ClassLoader)', 'void'),
+  \ javaapi#method(0,1,'getDefaultClassLoader(', ')', 'ClassLoader'),
+  \ javaapi#method(0,1,'setMBeanServer(', 'MBeanServer)', 'void'),
+  \ javaapi#method(0,1,'getMBeanServer(', ')', 'MBeanServer'),
+  \ javaapi#method(0,1,'getVersion(', ')', 'String'),
+  \ javaapi#method(0,1,'newClient(', 'Object) throws IOException', 'RMIConnection'),
+  \ javaapi#method(0,0,'makeClient(', 'String, Subject) throws IOException', 'RMIConnection'),
+  \ javaapi#method(0,0,'closeClient(', 'RMIConnection) throws IOException', 'void'),
+  \ javaapi#method(0,0,'getProtocol(', ')', 'String'),
+  \ javaapi#method(0,0,'clientClosed(', 'RMIConnection) throws IOException', 'void'),
+  \ javaapi#method(0,1,'close(', ') throws IOException', 'void'),
+  \ javaapi#method(0,0,'closeServer(', ') throws IOException', 'void'),
+  \ ])
+
